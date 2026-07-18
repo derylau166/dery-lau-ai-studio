@@ -1,0 +1,15 @@
+DERY LAU AI STUDIO - CARA MENGGANTI FOLDER LAMA
+
+Folder tujuan akhir:
+C:\Users\deryl\dery-lau-ai-studio
+
+1. Tutup terminal Vite lama dengan Ctrl+C.
+2. Tutup browser localhost dan semua terminal yang membuka folder lama.
+3. Di C:\Users\deryl, ubah nama folder lama:
+   dery-lau-ai-studio -> dery-lau-ai-studio-backup
+4. Pindahkan folder baru ini ke C:\Users\deryl.
+5. Ubah nama folder baru menjadi dery-lau-ai-studio.
+6. Pastikan package.json langsung terlihat di dalam folder tersebut,
+   bukan berada di folder bertingkat dua.
+7. Klik dua kali INSTALL-AND-RUN-WINDOWS.bat.
+8. Setelah muncul Local, buka http://localhost:5173.

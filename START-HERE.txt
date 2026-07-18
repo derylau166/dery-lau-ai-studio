@@ -1,0 +1,15 @@
+DERY LAU AI STUDIO - LANGKAH CEPAT
+==================================
+
+1. Buka folder project di Terminal.
+2. Jalankan: npm install
+3. Jalankan: npm run dev
+4. Buka: http://localhost:5173
+
+API key sudah disimpan di .env.local dan dipakai hanya oleh server lokal.
+Jika server sebelumnya masih berjalan, tekan Ctrl + C lalu jalankan kembali npm run dev.
+
+Untuk Vercel, tambahkan Environment Variable:
+POLLINATIONS_API_KEY = secret key Pollinations Anda
+
+Setelah itu lakukan Redeploy.
