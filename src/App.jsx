@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { supportsImageQuality } from './model-capabilities.js';
 
 const API_ROUTE = '/api';
 const STORAGE = {
@@ -316,7 +317,7 @@ function App() {
   const activeRatio = ASPECT_RATIOS.find((item) => item.id === ratio) || ASPECT_RATIOS[9];
   const activeDimensions = getOutputDimensions(activeRatio, resolution);
   const activeModel = models.find((item) => item.name === model) || FALLBACK_MODELS[0];
-  const supportsQuality = ['gptimage', 'gptimage-large', 'gpt-image-2'].includes(model);
+  const supportsQuality = supportsImageQuality(model);
 
   const finalPrompt = useMemo(() => {
     const parts = [
@@ -533,7 +534,7 @@ function App() {
           seed: requestSeed,
           safe: safeMode,
           timeoutMs: RESOLUTION_PRESETS[requestResolution]?.timeoutMs || 180000,
-          quality: ['gptimage', 'gptimage-large', 'gpt-image-2'].includes(requestModel) ? quality : undefined,
+          quality: supportsImageQuality(requestModel) ? quality : undefined,
         }),
       });
       if (!response.ok) {
